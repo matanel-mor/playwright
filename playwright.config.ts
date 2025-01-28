@@ -78,3 +78,9 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
+if (!process.env.NODE_ENV) {
+  require('dotenv').config({ path: `${__dirname}//src//config//.env` });
+} else {
+  require('dotenv').config({ path: `${__dirname}//src//config//.env.${process.env.NODE_ENV}` });
+}
