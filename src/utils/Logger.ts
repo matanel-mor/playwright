@@ -3,19 +3,16 @@ import path from "path";
 import moment from "moment-timezone";
 
 const currentDir = __dirname;
-// Go one level above (back to 'src')
+
 const srcDir = path.resolve(currentDir, "..");
 
-// Change to 'logging' folder
-const loggingDir = path.resolve(srcDir, "logging");
+const loggingDir = path.resolve(srcDir, "logs");
 
-// Function to format log entries with timestamp and timezone
 const customFormat = winston.format.printf(({ level, message, timestamp }) => {
       return `${timestamp} [${level}]: ${message}`;
 });
 
-// Set the desired timezone
-const timeZone = "Asia/Jerusalem"; // For Israel
+const timeZone = "Asia/Jerusalem";
 
 const logger = winston.createLogger({
       format: winston.format.combine(
