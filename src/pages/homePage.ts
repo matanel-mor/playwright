@@ -4,7 +4,7 @@ import logger from "../utils/Logger";
 export default class HomePage {
       constructor(private page: Page) { }
 
-      async navigateToHomePage() {
+      async assertNavigationToHomePage() {
             if (!process.env.BASE_URL) {
                   logger.error("BASE_URL is not defined in the environment configuration.");
                   throw new Error("BASE_URL is not defined in the environment configuration.");

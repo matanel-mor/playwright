@@ -10,6 +10,8 @@ export default class LoginPage {
       constructor(private page: Page) { }
 
       async login() {
+            logger.info("Starting login process.");
+
             if (!process.env.BASE_URL) {
                   logger.error("BASE_URL is not defined in the environment configuration.");
                   throw new Error("BASE_URL is not defined in the environment configuration.");
