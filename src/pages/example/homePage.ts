@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import logger from "../utils/Logger";
+import logger from "../../utils/Logger";
 
 export default class HomePage {
       constructor(private page: Page) { }
